@@ -6,6 +6,7 @@ import Webcam from "react-webcam";
 import {FaRegEye} from "react-icons/fa";
 import {drawRect} from "./utilites"
 import Tesseract from "tesseract.js";
+
 import annyang from "annyang";
 import "./App.css";
 
@@ -32,7 +33,9 @@ class App extends Component {
     videoId:"",
     listen:false,
     time:false,
-    location:false
+    location:false,
+    longitude:"",
+    latitude:""
   };
 
   constructor(props) {
@@ -287,33 +290,13 @@ class App extends Component {
     this.setState({time:false});
   }
 
+   
+  
+  // example usage
+
   readLocation=()=>{
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
-        Geocode.fromLatLng(latitude, longitude).then(
-          (response) => {
-            const address = response.results[0].formatted_address;
-            geocoder.reverseGeocode({
-              q: `${latitude},${longitude}`,
-              language: 'en',
-              no_annotations: 1
-            }).then((response) => {
-              const area = response.results[0].components.neighbourhood || response.results[0].components.suburb;
-              this.setState({area,location:true})
-            }).catch((err) => {
-              console.log(err);
-            });
-          },
-          (error) => {
-            console.error(error);
-          }
-        );
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+    
+    this.setState({location:false});
   }
   
 
