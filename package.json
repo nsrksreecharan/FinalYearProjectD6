@@ -10,7 +10,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "annyang": "^2.6.1",
-    "gh-pages": "^5.0.0",
     "nominatim-client": "^3.2.1",
     "opencage-api-client": "^1.0.1",
     "react": "^18.2.0",
@@ -49,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
