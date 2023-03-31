@@ -84,9 +84,6 @@ class App extends Component {
           this.speak1="";
           this.readTime();
         },
-        "location":()=>{
-          this.readLocation();
-        }
     });
     annyang.start();
     console.log('Speech recognition started');
